@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# make altgr to alt
+#setxkbmap -option altwin:meta_alt
+
+# set default layout to workman
+setxkbmap us -variant workman
+
+# clear lock
+xmodmap -e "clear lock"
+
+# make backspace capslock and +(numpad) to work properly 
+xmodmap ~/scripts/workman.xmodmap

@@ -1,0 +1,22 @@
+#!/bin/python3
+
+from sys import argv, exit, stderr
+from os import system
+
+def compile(file_name, flags):
+    try:
+        output_file = file_name[:file_name.rindex('.')]
+        cmd_str = f'gcc {flags} -o {output_file} {file_name}' 
+        print(cmd_str)
+        system(cmd_str)
+    except Exception as e:
+        print(f'Error: {e}', file = stderr)
+    
+if __name__ == '__main__':
+    flags = "-lm -lGL -lGLU -lglut"
+    if len(argv) < 2:
+        print('Error: Too few arguments!\nSyntax: compile file_name [flags]', file = stderr)
+        exit(1)
+    else:
+        for file_name in argv[1:]:
+            compile(file_name, flags)

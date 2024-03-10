@@ -1,0 +1,14 @@
+keycode 22 = Caps_Lock NoSymbol
+keycode 66 = BackSpace NoSymbol
+keycode 135 = Escape NoSymbol
+
+! Do [120;10uthe same in tty and xterm
+! Make ctrl and alt behave in a emacs friendly way
+clear control
+clear Mod1
+keycode 37 = Control_L
+keycode 105 = Alt_R
+keycode 64 = Alt_L
+keycode 108 = Control_R
+add control = Control_R Control_L
+add Mod1 = Alt_R Alt_L

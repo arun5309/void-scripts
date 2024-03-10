@@ -1,0 +1,2 @@
+sudo sv up bluetoothd
+
